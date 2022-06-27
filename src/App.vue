@@ -85,14 +85,14 @@
     <section class="todo-list">
       <h3>TODO СПИСОК</h3>
       <div class="list">
-        <div v-for="todo in todos_asc" :class="`todo-item ${todo.done && 'done'}`">
+        <div v-for="(todo, index) in todos_asc" :class="`todo-item ${todo.done && 'done'}`" :key="index">
           <label>
             <input type="checkbox" v-model="todo.done" />
             <span :class="`bubble ${todo.category}`"></span>
           </label>
 
           <div class="todo-content">
-            <input type="" v-model="todo.content" />
+            <input type="text" v-model="todo.content" />
           </div>
 
           <div class="actions">
